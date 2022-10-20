@@ -1,0 +1,81 @@
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  gap: 1rem;
+
+  background-color: var(--gray-500);
+  color: var(--gray-100);
+}
+
+.listItem {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  padding-left: 2rem;
+  font-size: 1.375rem;
+}
+
+.listItem input{
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  appearance:none;
+	outline: none;
+	content: none;
+  
+  display: block;
+  width: 25px;
+  height: 25px;
+   
+  border: 2px solid var(--blue-dark);
+  border-radius: 100%;
+}
+
+.listItem input:checked {
+  background-color: var(--blue-dark);
+}
+.listItem input:hover {
+  /* opacity: 0.8; */
+  border: 2px solid var(--blue);
+}
+
+.listItem input:after {
+  content: "";
+  position: absolute;
+  display: none;
+
+  left: 8px;
+  top: 5px;
+  width: 4px;
+  height: 9px;
+  border: solid var(--gray-100);
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+.listItem input:checked::after {
+  display: block;
+}
+
+
+/* Textos das tarefas */
+.listItem input:checked ~ .listItemText {
+  text-decoration: line-through;
+  color: var(--gray-300);
+}
+
+
+/* botao lixeira */
+.trashButton {
+  width: 1.3rem;
+  color: var(--gray-300);
+}
+
+.trashButton:hover {
+  color: var(--danger);
+}
